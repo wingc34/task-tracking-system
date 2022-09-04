@@ -1,0 +1,19 @@
+﻿Task,Priority,Description,By_who,Stage
+S1_1,1,Server Set Up,Tommy,1
+S1_2,2,Meeting (I),,1
+S1_3,3,Frontend creation<br/>expected to due on Thursday,Perry,1
+S1_4,4,Backend creation<br/>expected to due on Thursday,David,1
+S1_5,5,Frontend creation<br/>expected to due on Thursday <br/> (2),Sandy,1
+S2_1,1,Meeting (II),,2
+S2_2,2,Frontend fixes<br/>expected to due on Monday,Allen,2
+S2_3,3,Backend fixes<br/>expected to due on Monday,David,2
+S2_4,4,Design changes<br/>expected to due on Friday,Mat,2
+S2_5,5,Meeting (III) with <p>Demoooo</p>,,2
+S2_6,6,Deployment on AWS,Tommy,2
+S2_7,7,Testing and QA,David,2
+S2_8,8,<b>(Reserved)</b>,,2
+S2_9,9,<b>(Reserved)</b>,,2
+S2_10,10,<b>(Reserved)</b>,,2
+S2_11,11,<b>(Reserved)</b>,,2
+S3_1,10,Finalise the work,David,3
+S3_2,20,Submit via email and make sure the repository is kept secret,Tony,3

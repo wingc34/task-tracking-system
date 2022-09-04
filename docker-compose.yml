@@ -1,0 +1,41 @@
+version: "3"
+services:
+  react-app:
+    image: react-app
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - task-tracking-system
+  api-server:
+    image: api-server
+    ports:
+      - "3001:3001"
+    networks:
+      - task-tracking-system
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - "27017:27017"
+    networks:
+      - task-tracking-system
+    # volumes:
+    #   - mongo-data:/data/db
+  mongo_seed:
+    image: mongo:3.6.19-xenial
+    build: mongo-seed/.
+    links:
+      - mongo
+    networks:
+      - task-tracking-system
+    volumes:
+      - ./mongo-seed:/mongo-seed
+    command: /bin/bash -c "mongoimport --host mongo --db=users --collection=users --type=csv --headerline --file=mongo-seed/users.csv; mongoimport --host mongo --db=users --collection=tasks --type=csv --headerline --file=mongo-seed/tasks.csv"
+networks:
+  task-tracking-system:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
